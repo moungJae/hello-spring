@@ -1,10 +1,13 @@
 package hello.core.member;
 
+import hello.core.AppConfig;
+
 public class MemberApp {
 
     // psvm : 자동으로 public static void main 생성
     public static void main(String[] args) {
-        MemberService memberService = new MemberServiceImpl();
+        AppConfig appConfig = new AppConfig();
+        MemberService memberService = appConfig.memberService();
         // ctrl + alt + v : 자동으로 Member member 생성
         Member member = new Member(1L, "memberA", Grade.VIP);
         memberService.join(member);
