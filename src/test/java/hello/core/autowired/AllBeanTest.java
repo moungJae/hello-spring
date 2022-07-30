@@ -9,7 +9,6 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.w3c.dom.stylesheets.LinkStyle;
 
 import java.util.List;
 import java.util.Map;
@@ -39,8 +38,11 @@ public class AllBeanTest {
         public DiscountService(Map<String, DiscountPolicy> policyMap, List<DiscountPolicy> policies){
             this.policyMap = policyMap;
             this.policies = policies;
-            System.out.println("policyMap = " + policyMap);
-            System.out.println("policies = " + policies);
+
+            System.out.println("policyMap");
+            policyMap.forEach((key, value)->{
+                System.out.println("key = " + key + "/value = " + value);
+            });
         }
 
         public int discount(Member member, int price, String discountCode){

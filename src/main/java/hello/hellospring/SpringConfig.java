@@ -10,17 +10,17 @@ import org.springframework.context.annotation.Configuration;
 import javax.persistence.EntityManager;
 import javax.sql.DataSource;
 
-@Configuration
+// @Configuration
 public class SpringConfig {
 
     private final MemberRepository memberRepository;
 
-    @Autowired
+    // @Autowired
     public SpringConfig(MemberRepository memberRepository){
         this.memberRepository = memberRepository;
     }
 
-    @Bean
+    // @Bean
     public MemberService memberService(){
         return new MemberService(memberRepository);
     }

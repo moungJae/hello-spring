@@ -11,13 +11,12 @@ import hello.core.order.OrderService;
 import hello.core.order.OrderServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Scope;
 
-//@Configuration
+@Configuration
 public class AppConfig {
 
-    // @Bean memberService -> new MemoryMemberRepository()
-    // @Bean orderService -> new MemoryMemberRepository()
-
+    @Scope("prototype")
     @Bean
     public MemberService memberService(){
         System.out.println("call AppConfig.memberService");
